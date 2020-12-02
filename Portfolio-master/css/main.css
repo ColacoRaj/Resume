@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: auto;
+}
+
+#preloader {
+	position: fixed;
+	background: url(/images/dope_loader.gif);
+	width: 100%;
+	height: 100vh;
+	z-index: 100;
+}
+
+#wrapper {
+	z-index: -1;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background-image: url(/images/night_drive.jpg);
+	background-size: cover;
+	background-repeat: repeat-x;
+	animation: animatebg 90s linear infinite;
+	transition: background-image 5s;
+}
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+.page {
+	height: 100vh;
+}
+
+.para_container {
+	color: #c4cde6;
+	background: rgba(0, 0, 0, 0.5);
+	margin: 20px;
+	padding: 10px;
+	/* display: none; */
+	transition: background 5s ease, color 5s ease;
+	border-radius: 15px;
+}
+
+#home {
+	position: relative;
+	text-align: center;
+	justify-content: center;
+	top: 30%;
+}
+
+.name {
+	font-family: 'Red Hat Display', sans-serif;
+	font-weight: 500;
+	font-size: 5em;
+	color: rgba(29, 36, 58, 0.8);
+	text-shadow: 2px 2px rgba(169, 196, 255, 0.7);
+	text-transform: uppercase;
+	background-image: linear-gradient(transparent calc(60% - 5px), #6268b9 5px);
+	background-size: 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+	transition: 0.5s ease;
+}
+
+.name:hover {
+	background-size: 100%;
+	cursor: pointer;
+}
+
+.role {
+	font-family: 'Red Hat Display', sans-serif;
+	font-weight: 500;
+	font-size: 3em;
+	color: rgba(29, 36, 58, 0.8);
+	text-shadow: 2px 2px rgba(169, 196, 255, 0.7);
+	background-image: linear-gradient(transparent calc(55% - 2px), #6268b9 5px);
+	background-size: 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+	transition: 0.5s ease;
+}
+
+.role:hover {
+	background-size: 100%;
+	cursor: pointer;
+}
+
+.social {
+	margin-top: 20px;
+}
+
+.social_btn {
+	background: rgba(98, 104, 185, 0.3);
+	transition: background 1s ease;
+}
+
+.github:hover {
+	background: rgba(108, 198, 68, 0.7);
+}
+
+.instagram:hover {
+	background: rgba(174, 95, 219, 0.7);
+}
+
+.facebook:hover {
+	background: rgba(59, 89, 152, 0.7);
+}
+
+.linkedin:hover {
+	background: rgba(0, 123, 181, 0.7);
+}
+
+#nav_down {
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 20px;
+	position: absolute;
+	color: white;
+	bottom: 0;
+	/* visibility: hidden; */
+}
+
+#nav_down:hover {
+	background: rgba(169, 196, 255, 0.3);
+	cursor: pointer;
+	visibility: visible;
+}
+
+.nav_down_i {
+	color: white;
+	animation: jump 2s infinite;
+	transition: color 5s ease;
+}
+
+/* Animations */
+@keyframes animatebg {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: 100vw;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes jump {
+	0%,
+	20%,
+	50%,
+	70%,
+	100% {
+		transform: translateY(0);
+	}
+	40%,
+	60% {
+		transform: translateY(-10px);
+	}
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+	.name {
+		font-size: 3em;
+		background: rgba(133, 167, 231, 0.2);
+		width: 95%;
+		border-radius: 10px;
+		padding: 0.5em;
+		margin-bottom: 10px;
+	}
+	.name:hover {
+		background-size: 0%;
+	}
+	.role {
+		padding: 0.5em;
+		font-size: 2em;
+		background: rgba(133, 167, 231, 0.2);
+		width: 70%;
+		border-radius: 10px;
+	}
+	.role:hover {
+		background-size: 0%;
+	}
+	.nav_down {
+		padding: 0px;
+	}
+}
